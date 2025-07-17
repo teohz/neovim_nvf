@@ -138,7 +138,7 @@
                   {
                     key = "<M-s>";
                     mode = [ "n" ];
-                    action = "<CMD>silet !tmux neww tmux-sessionizer<CR>";
+                    action = "<CMD>silent !tmux neww tmux-sessionizer<CR>";
                     silent = true;
                     desc = "Run sessionizer.";
                   }
