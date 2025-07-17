@@ -136,6 +136,13 @@
 
                 keymaps = [
                   {
+                    key = "<M-s>";
+                    mode = [ "n" ];
+                    action = "<CMD>silet !tmux neww tmux-sessionizer<CR>";
+                    silent = true;
+                    desc = "Run sessionizer.";
+                  }
+                  {
                     key = "<leader>sa";
                     mode = [ "n" ];
                     action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
