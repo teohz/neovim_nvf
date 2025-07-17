@@ -1,5 +1,5 @@
 {
-  description = "teralium.int.network neovim flakeee v20250716";
+  description = "teralium.int.network neovim nvf flakeee v20250717";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -114,14 +114,48 @@
                 autopairs.nvim-autopairs.enable = true;
 
                 options = {
+                  autoindent = true;
                   tabstop = 8;
                   shiftwidth = 8;
                   softtabstop = 0;
                   expandtab = false;
                   smartindent = true;
+                  wrap = false;
+
+                  hlsearch = true;
+                  incsearch = true;
+
+                  scrolloff = 8;
+                  colorcolumn = "80,120";
+
+                  list = true;
+                  listchars = "tab:> ,trail:-,eol:$";
                 };
 
+                searchCase = "smart";
+
                 keymaps = [
+                  {
+                    key = "<leader>sa";
+                    mode = [ "n" ];
+                    action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
+                    silent = true;
+                    desc = "Replace all with ...";
+                  }
+                  {
+                    key = "<leader>fo";
+                    mode = [ "n" ];
+                    action = "<CMD>Telescope oldfiles<CR>";
+                    silent = true;
+                    desc = "Old files [Telescope]";
+                  }
+                  {
+                    key = "<leader>fa";
+                    mode = [ "n" ];
+                    action = "<CMD>Telescope find_files follow=true no_ignore=true hidder=true<CR>";
+                    silent = true;
+                    desc = "Find files; hidden + links [Telescope]";
+                  }
                   {
                     key = "<leader>wq";
                     mode = [ "n" ];
@@ -156,6 +190,111 @@
                     action = "<CMD>Cheatsheet<CR>";
                     silent = true;
                     desc = "Open Cheatsheet.";
+                  }
+                  {
+                    key = "<leader>nh";
+                    mode = [ "n" ];
+                    action = ":nohlsearch<CR>";
+                    silent = true;
+                    desc = "Clear search highlight.";
+                  }
+                  {
+                    key = "<leader>nl";
+                    mode = [ "n" ];
+                    action = "<CMD>set list!<CR>";
+                    silent = true;
+                    desc = "Toggle list view.";
+                  }
+                  {
+                    key = "J";
+                    mode = [ "v" ];
+                    action = ":m '>+1<CR>gv=gv";
+                    silent = true;
+                    desc = "Move selection down.";
+                  }
+                  {
+                    key = "K";
+                    mode = [ "v" ];
+                    action = ":m '<-2<CR>gv=gv";
+                    silent = true;
+                    desc = "Move selection up.";
+                  }
+                  {
+                    key = "<";
+                    mode = [ "v" ];
+                    action = "<gv";
+                    silent = true;
+                    desc = "Outdent.";
+                  }
+                  {
+                    key = ">";
+                    mode = [ "v" ];
+                    action = ">gv";
+                    silent = true;
+                    desc = "Indent.";
+                  }
+                  {
+                    key = "<leader>ee";
+                    mode = [ "n" ];
+                    action = "oif err != nil {<CR>}<Esc>Oreturn err";
+                    silent = true;
+                    desc = "GO - Add err check.";
+                  }
+                  {
+                    key = "<Tab>";
+                    mode = [ "n" ];
+                    action = ":bn<CR>";
+                    silent = true;
+                    desc = "Switch to next buffer.";
+                  }
+                  {
+                    key = "<S-Tab>";
+                    mode = [ "n" ];
+                    action = ":bp<CR>";
+                    silent = true;
+                    desc = "Switch to previous buffer.";
+                  }
+                  {
+                    key = "<leader>bd";
+                    mode = [ "n" ];
+                    action = ":bd<CR>";
+                    silent = true;
+                    desc = "Delete buffer.";
+                  }
+                  {
+                    key = "<leader>x";
+                    mode = [ "n" ];
+                    action = "<CMD>!chmod +x %<CR>";
+                    silent = true;
+                    desc = "Make file executable.";
+                  }
+                  {
+                    key = "<C-d>";
+                    mode = [ "n" ];
+                    action = "<C-d>zz";
+                    silent = true;
+                    desc = "Move half page down.";
+                  }
+                  {
+                    key = "<C-u>";
+                    mode = [ "n" ];
+                    action = "<C-u>zz";
+                    silent = true;
+                    desc = "Move half page up.";
+                  }
+                  {
+                    key = "n";
+                    mode = [ "n" ];
+                    action = "nzzzv";
+                    silent = true;
+                    desc = "Repeat the last search; centered.";
+                  }
+                  {
+                    key = "N";
+                    mode = [ "n" ];
+                    action = "Nzzzv";
+                    silent = true;
+                    desc = "Repeat the last search reversed; centered.";
                   }
                 ];
 
