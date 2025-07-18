@@ -136,11 +136,11 @@
 
                 keymaps = [
                   {
-                    key = "<M-s>";
-                    mode = [ "n" ];
-                    action = "<CMD>silent !tmux neww tmux-sessionizer<CR>";
+                    key = "jk";
+                    mode = [ "i" ];
+                    action = "<Esc>";
                     silent = true;
-                    desc = "Run sessionizer.";
+                    desc = "Exit input mode.";
                   }
                   {
                     key = "<leader>sa";
@@ -302,6 +302,69 @@
                     action = "Nzzzv";
                     silent = true;
                     desc = "Repeat the last search reversed; centered.";
+                  }
+                  {
+                    key = "<leader>pp";
+                    mode = [ "x" ];
+                    action = "\"_dP";
+                    silent = true;
+                    desc = "Replace, keep register.";
+                  }
+                  {
+                    key = "<leader>pp";
+                    mode = [ "x" ];
+                    action = "\"_dP";
+                    silent = true;
+                    desc = "Replace, keep register.";
+                  }
+                  {
+                    key = "<leader>pp";
+                    mode = [ "n" ];
+                    action = "\"+p";
+                    silent = true;
+                    desc = "Paste from system register.";
+                  }
+                  {
+                    key = "<leader>pp";
+                    mode = [ "v" ];
+                    action = "\"+p";
+                    silent = true;
+                    desc = "Paste from system register.";
+                  }
+                  {
+                    key = "<leader>yy";
+                    mode = [ "n" ];
+                    action = "\"+y";
+                    silent = true;
+                    desc = "Copy to system register.";
+                  }
+                  {
+                    key = "<leader>yy";
+                    mode = [ "v" ];
+                    action = "\"+y";
+                    silent = true;
+                    desc = "Copy to system register.";
+                  }
+                  {
+                    key = "<leader>Y";
+                    mode = [ "n" ];
+                    action = "\"+Y";
+                    silent = true;
+                    desc = "Copy line to system register.";
+                  }
+                  {
+                    key = "<leader>dd";
+                    mode = [ "n" ];
+                    action = "\"_d";
+                    silent = true;
+                    desc = "Delete to void register.";
+                  }
+                  {
+                    key = "<leader>dd";
+                    mode = [ "v" ];
+                    action = "\"_d";
+                    silent = true;
+                    desc = "Delete to void register.";
                   }
                 ];
 
