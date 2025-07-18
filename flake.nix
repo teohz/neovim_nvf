@@ -120,7 +120,7 @@
                   softtabstop = 0;
                   expandtab = false;
                   smartindent = true;
-                  wrap = false;
+                  wrap = true;
 
                   hlsearch = true;
                   incsearch = true;
