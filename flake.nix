@@ -84,7 +84,7 @@
                   markdown = {
                     enable = true;
                     lsp.enable = true;
-                    extensions.render-markdown.enable = true;
+                    extensions.render-markdown-nvim.enable = true;
                   };
                   bash = {
                     enable = true;
