@@ -81,17 +81,26 @@
                   enableFormat = true;
                   enableTreesitter = true;
 
-                  markdown.enable = true;
+                  markdown = {
+                    enable = true;
+                    lsp.enable = true;
+                    extensions.render-markdown.enable = true;
+                  };
                   bash = {
                     enable = true;
+                    lsp.enable = true;
                     extraDiagnostics = {
                       enable = true;
                       types = [ "shellcheck" ];
                     };
-                    format.enable = true;
+                  };
+                  python = {
+                    enable = true;
+                    lsp.enable = true;
                   };
                   nix = {
                     enable = true;
+                    lsp.enable = true;
                     format = {
                       enable = true;
                       type = "nixfmt";
@@ -100,14 +109,15 @@
                   go = {
                     enable = true;
                     lsp.enable = true;
-                    treesitter.enable = true;
                   };
                   zig = {
                     enable = true;
                     lsp.enable = true;
-                    treesitter.enable = true;
                   };
-                  yaml.enable = true;
+                  yaml = {
+                    enable = true;
+                    lsp.enable = true;
+                  };
                 };
 
                 visuals = {
