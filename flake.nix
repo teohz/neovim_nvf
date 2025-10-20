@@ -29,9 +29,6 @@
                 undoFile.enable = true;
 
                 utility = {
-                  leetcode-nvim.enable = true;
-                  leetcode-nvim.setupOpts.lang = "golang";
-
                   oil-nvim.enable = true;
                   sleuth.enable = true;
                   surround.enable = true;
@@ -64,7 +61,7 @@
 
                 binds = {
                   cheatsheet.enable = true; # check - telescope leader key
-                  # hardtime-nvim.enable = true;
+                  hardtime-nvim.enable = true;
                   whichKey.enable = true;
                 };
 
@@ -100,7 +97,16 @@
                       type = "nixfmt";
                     };
                   };
-                  go.enable = true;
+                  go = {
+                    enable = true;
+                    lsp.enable = true;
+                    treesitter.enable = true;
+                  };
+                  zig = {
+                    enable = true;
+                    lsp.enable = true;
+                    treesitter.enable = true;
+                  };
                   yaml.enable = true;
                 };
 
