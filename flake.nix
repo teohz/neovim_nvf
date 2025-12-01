@@ -26,6 +26,7 @@
                 treesitter.enable = true;
                 treesitter.autotagHtml = true;
                 telescope.enable = true;
+                repl.conjure.enable = true;
 
                 undoFile.enable = true;
 
