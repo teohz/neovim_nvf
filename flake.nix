@@ -24,6 +24,7 @@
                 };
 
                 treesitter.enable = true;
+                treesitter.autotagHtml = true;
                 telescope.enable = true;
 
                 undoFile.enable = true;
@@ -85,6 +86,21 @@
                     enable = true;
                     lsp.enable = true;
                     extensions.render-markdown-nvim.enable = true;
+                  };
+                  clojure = {
+                    enable = true;
+                    lsp.enable = true;
+                    treesitter.enable = true;
+                  };
+                  html = {
+                    enable = true;
+                    treesitter.enable = true;
+                    treesitter.autotagHtml = true;
+                  };
+                  css = {
+                    enable = true;
+                    lsp.enable = true;
+                    treesitter.enable = true;
                   };
                   bash = {
                     enable = true;
