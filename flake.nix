@@ -63,7 +63,7 @@
 
                 binds = {
                   cheatsheet.enable = true; # check - telescope leader key
-                  hardtime-nvim.enable = true;
+                  hardtime-nvim.enable = false;
                   whichKey.enable = true;
                 };
 
@@ -145,6 +145,9 @@
                 };
 
                 autopairs.nvim-autopairs.enable = true;
+                autopairs.nvim-autopairs.setupOpts = {
+                  enable_check_bracket_line = false;
+                };
 
                 options = {
                   autoindent = true;
