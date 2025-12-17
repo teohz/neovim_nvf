@@ -17,6 +17,11 @@
             { lib, ... }:
             {
               config.vim = {
+                extraPlugins = {
+                  nvim-paredit = {
+                    package = pkgs.vimPlugins.nvim-paredit;
+                  };
+                };
                 lazy.plugins = {
                   nvim.paredit = {
                     package = pkgs.vimPlugins.nvim-paredit;
