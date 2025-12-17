@@ -17,6 +17,16 @@
             { lib, ... }:
             {
               config.vim = {
+                lazy.plugins = {
+                  nvim.paredit = {
+                    package = pkgs.vimPlugins.nvim-paredit;
+                    setupModule = "nvim-paredit";
+                    setupOpts = {
+                      option_name = true;
+                    };
+                    lazy = true;
+                  };
+                };
                 theme = {
                   enable = true;
                   name = "tokyonight";
@@ -142,11 +152,12 @@
                   highlight-undo.enable = true;
                   indent-blankline.enable = true;
                   nvim-cursorline.enable = true;
+                  rainbow-delimiters.enable = true;
                 };
 
                 autopairs.nvim-autopairs.enable = true;
                 autopairs.nvim-autopairs.setupOpts = {
-                  enable_check_bracket_line = false;
+                  # enable_check_bracket_line = false;
                 };
 
                 options = {
