@@ -18,14 +18,10 @@
             {
               config.vim = {
                 startPlugins = [ pkgs.vimPlugins.nvim-paredit ];
-                lazy.plugins = {
-                  nvim.paredit = {
+                extraPlugins = {
+                  nvim-paredit = {
                     package = pkgs.vimPlugins.nvim-paredit;
-                    setupModule = "nvim-paredit";
-                    setupOpts = {
-                      option_name = true;
-                    };
-                    lazy = true;
+                    setup = "require('nvim-paredit').setup {}";
                   };
                 };
                 theme = {
@@ -131,7 +127,8 @@
                     lsp.enable = true;
                     format = {
                       enable = true;
-                      type = "nixfmt";
+                      type = "alejandra";
+                      # type = "nixfmt";
                     };
                   };
                   go = {
